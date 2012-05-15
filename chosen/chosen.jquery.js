@@ -565,6 +565,7 @@ Copyright (c) 2011 by Harvest
     };
 
     Chosen.prototype.results_show = function() {
+      this.form_field_jq.trigger('chosen:show', [this]);
       var dd_top;
       if (!this.is_multiple) {
         this.selected_item.addClass("chzn-single-with-drop");
@@ -592,6 +593,7 @@ Copyright (c) 2011 by Harvest
     };
 
     Chosen.prototype.results_hide = function() {
+      this.form_field_jq.trigger('chosen:hide', [this]);
       if (!this.is_multiple) {
         this.selected_item.removeClass("chzn-single-with-drop");
       }
